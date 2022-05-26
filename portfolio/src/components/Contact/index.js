@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 function ContactForm() {
-    
+    const [errorMessage, setErrorMessage] = useState('');
+
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
     const { name, email, message } = formState;
 
     function handleChange(e) {
+        
+        if (e.target.name === 'email') {
+            const isValid = validateEmail(e.target.value);
+            console.log(isValid);
+            // isValid conditional statement
+            if (!isValid) {
+                setErrorMessage('Your email is invalid.');
+              } else {
+                setErrorMessage('');
+              }
+        }  
         setFormState({...formState, [e.target.name]: e.target.value })
       }
       

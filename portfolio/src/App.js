@@ -5,7 +5,9 @@ import Footer from './components/Footer';
 import About from "./components/About";
 import Portfolio from "./components/Portfolio"
 import ContactForm from './components/Contact';
+import Resume from './components/Resume'
 function App() {
+  
   return (
     <div>
       <Header>
@@ -17,6 +19,7 @@ function App() {
         <About></About>
         <Portfolio></Portfolio>
         <ContactForm></ContactForm>
+        <Resume></Resume>
         <Footer></Footer>
       </main>
     </div>
